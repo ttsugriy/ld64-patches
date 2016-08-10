@@ -1,0 +1,15 @@
+diff --git a/src/ld/Options.cpp b/src/ld/Options.cpp
+index 0f5985d..78eb059 100644
+--- a/src/ld/Options.cpp
++++ b/src/ld/Options.cpp
+@@ -3848,8 +3848,7 @@ void Options::buildSearchPaths(int argc, const char* argv[])
+ 			addStandardLibraryDirectories = false;
+ 		else if ( strcmp(argv[i], "-v") == 0 ) {
+ 			fVerbose = true;
+-			extern const char ldVersionString[];
+-			fprintf(stderr, "%s", ldVersionString);
++			fprintf(stderr, "@(#)PROGRAM:ld  PROJECT:ld64-@@VERSION@@\n");
+ 			fprintf(stderr, "configured to support archs: %s\n", ALL_SUPPORTED_ARCHS);
+ 			 // if only -v specified, exit cleanly
+ 			 if ( argc == 2 ) {
+-- 
